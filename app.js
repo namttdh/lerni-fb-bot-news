@@ -4,7 +4,7 @@ const VnExpress = require('./news/vnexpress');
 const Facebook = require('./facebook');
 const express = require('express');
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 const generator = async () => {
     let vnExpress = new VnExpress();
