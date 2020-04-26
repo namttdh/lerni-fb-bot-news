@@ -1,7 +1,7 @@
 const fetch = require('node-fetch');
-const CreateImage = require('./create-image');
 const FormData = require('form-data');
-const fs = require('fs');
+const moment = require('moment');
+moment.locale('vi');
 
 function Facebook(accessToken, groupId)
 {
@@ -43,8 +43,9 @@ function Facebook(accessToken, groupId)
 
     this.postNews = async(images) => {
         let formPublish = new FormData();
+        let date = moment().format('dddd').toUpperCase() + ' NGÀY '+ moment().format('LL').toUpperCase();
         formPublish.append('message',
-            '# TIN TỨC BUỔI TRƯA THỨ 2 NGÀY 26/04\n' +
+            `# TIN TỨC BUỔI TRƯA ${date}\n` +
             '\n' +
             '## thông tin\n' +
             '* Bài viết được tự động đăng lúc 12 giờ trưa hàng ngày\n' +
