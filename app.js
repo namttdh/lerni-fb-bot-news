@@ -21,6 +21,20 @@ const generator = async () => {
     facebook.postAsPage(process.env.PAGE_ID).postNews(images);
 };
 
+app.use((req, res, next) => {
+    //BASIC AUTHENTICATION
+    const auth = {login: process.env.BASIC_USER, password: process.env.BASIC_PASSWORD};
+
+    const b64auth = (req.headers.authorization || '').split(' ')[1] || '';
+    const [login, password] = Buffer.from(b64auth, 'base64').toString().split(':');
+
+    if (login && password && login === auth.login && password === auth.password) {
+        return next()
+    }
+    res.set('WWW-Authenticate', 'Basic realm="401"');
+    res.status(401).send('Authentication required.');
+});
+
 app.get('/fb-news', (req, res) => {
     generator(); //no need wait done and no need return anything
     res.send('Hello Facebook!!!')
