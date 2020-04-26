@@ -1,4 +1,4 @@
-# Bot automatic get news from VnExpress and publish feed in facebook
+# Our community
 Group facebook: https://www.facebook.com/groups/lerni/
 
 Youtube channel: https://www.youtube.com/channel/UCvVwR21Pb8r06LcZ7n3eR4g
