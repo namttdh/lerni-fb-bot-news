@@ -18,7 +18,10 @@ const generator = async () => {
 
     let facebook = new Facebook(process.env.ACCESS_TOKEN, process.env.GROUP_ID);
 
-    facebook.postAsPage(process.env.PAGE_ID).postNews(images);
+    if (process.env.PAGE_ID) {
+        facebook.postAsPage(process.env.PAGE_ID)
+    }
+    facebook.postNews(images);
 };
 
 app.use((req, res, next) => {
