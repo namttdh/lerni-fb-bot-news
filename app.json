@@ -1,0 +1,35 @@
+{
+  "name": "Facebook bot news",
+  "description": "Facebook auto post news crawler from VnExpress",
+  "keywords": [
+    "crawler",
+    "facebook",
+    "canvas"
+  ],
+  "website": "https://lerni.dev",
+  "repository": "https://github.com/namttdh/lerni-fb-bot-news",
+  "success_url": "/welcome",
+  "env": {
+    "ACCESS_TOKEN": {
+      "description": "Access token of user or page",
+      "value": ""
+    },
+    "GROUP_ID": {
+      "description": "Group you want to post to",
+      "value": ""
+    },
+    "PAGE_ID": {
+      "description": "Page of you want to post as (REQUIRED IF ACCESS_TOKEN IS PAGE)",
+      "value": "",
+      "required": false
+    },
+    "BASIC_USER": {
+      "description": "Basic authentication username",
+      "value": "admin"
+    },
+    "BASIC_PASSWORD": {
+      "description": "Basic authentication password",
+      "value": "admin"
+    }    
+  }
+}
