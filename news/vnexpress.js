@@ -2,6 +2,8 @@ const Parser = require('rss-parser');
 const fetch = require('node-fetch');
 
 function getStr(str, start, end) {
+    if(!str) return  null;
+
     let regex = start + "([\\s\\S]*?)" + end;
     let match = str.match(regex);
 
@@ -9,6 +11,8 @@ function getStr(str, start, end) {
 }
 
 function getAllStr(str, start, end) {
+    if(!str) return  null;
+
     let regex = new RegExp(start + '([\\s\\S]*?)' + end, 'g');
     let match = str.match(regex);
 
