@@ -5,6 +5,10 @@
   "scripts": {
     "start": "node ./app.js"
   },
+  "engines": {
+    "node": "10.20.1",
+    "yarn": "1.21.1"
+  },
   "dependencies": {
     "canvas": "^2.6.1",
     "cookie-parser": "~1.4.4",
